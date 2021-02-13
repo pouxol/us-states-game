@@ -35,10 +35,7 @@ while len(correct_guesses) < 50:
             t.write(f"{answer_state.title()}", align="center", font=("Arial", 6, "bold"))
             correct_guesses.append(answer_state)
 
-missed_states = []
-for state in states_list:
-    if state not in correct_guesses:
-        missed_states.append(state.title())
+missed_states = [state.title() for state in states_list if state not in correct_guesses]
 
 print("Here are the state's you missed:")
 print(missed_states)
